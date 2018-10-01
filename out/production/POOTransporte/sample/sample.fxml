@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane layoutX="44.0" layoutY="43.0" prefHeight="314.0" prefWidth="511.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXTextField fx:id="usuarioField" focusColor="#4082a8" layoutX="119.0" layoutY="65.0" prefHeight="25.0" prefWidth="274.0" promptText="Nombre de Usuario" />
+            <JFXPasswordField fx:id="passField" focusColor="#4082a8" layoutX="119.0" layoutY="158.0" prefHeight="25.0" prefWidth="274.0" promptText="Contraseña" />
+            <JFXButton fx:id="ingresar" buttonType="RAISED" layoutX="307.0" layoutY="219.0" onAction="#intentarIngresar" prefHeight="33.0" prefWidth="86.0" ripplerFill="WHITE" style="-fx-background-color: #4082a8;" text="Ingresar" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
