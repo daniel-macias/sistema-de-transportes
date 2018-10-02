@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#616161" layoutX="233.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar nuevo vehiculo">
+         <font>
+            <Font name="Roboto Light" size="24.0" />
+         </font>
+      </Text>
+      <JFXTextField layoutX="257.0" layoutY="86.0" prefHeight="25.0" prefWidth="211.0" promptText="placa">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="256.0" layoutY="120.0" prefHeight="25.0" prefWidth="211.0" promptText="año de fabricación">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="256.0" layoutY="155.0" prefHeight="25.0" prefWidth="211.0" promptText="color">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="257.0" layoutY="190.0" prefHeight="25.0" prefWidth="211.0" promptText="marca">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="256.0" layoutY="224.0" prefHeight="25.0" prefWidth="211.0" promptText="capacidad">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="256.0" layoutY="259.0" prefHeight="25.0" prefWidth="211.0" promptText="kilometraje">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="257.0" layoutY="292.0" prefHeight="25.0" prefWidth="211.0" promptText="número VIN">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField layoutX="256.0" layoutY="326.0" prefHeight="25.0" prefWidth="211.0" promptText="sede de pertenencia">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXComboBox layoutX="256.0" layoutY="361.0" prefHeight="25.0" prefWidth="211.0" promptText="estado" />
+      <JFXButton buttonType="RAISED" layoutX="257.0" layoutY="413.0" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>
