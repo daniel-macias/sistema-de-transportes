@@ -10,7 +10,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
@@ -34,7 +36,8 @@ public class ControllerAdmin implements Initializable {
     private JFXDrawer drawer;
 
     @FXML
-    private Pane panelQueCambiara;
+    private BorderPane panelQueCambiara;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,22 +53,22 @@ public class ControllerAdmin implements Initializable {
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
                         switch (node.getAccessibleText()){ //Revisa si esta eligiendo una de las opciones del menu
                             case "aprobar_solicitud":
-                                System.out.println("aprobar solicutud");
+                                abrirAprobarSolicitud();
                                 break;
                             case "registrar_secretaria":
-                                System.out.println("registrar secretaria");
+                                abrirRegistrarSecretaria();
                                 break;
                             case "registrar_vehiculo":
-                                System.out.println("registrar vehiculo");
+                                abrirRegistrarVehiculo();
                                 break;
                             case "registrar_chofer":
-                                System.out.println("registrar chofer");
+                                abrirRegistrarChofer();
                                 break;
                             case "consultar_top_choferes":
-                                System.out.println("consultar top choferes");
+                                abrirConsultarTopChoferes();
                                 break;
                             case "consultar_top_escuelas":
-                                System.out.println("consultar top escuelas");
+                                abrirConsultarTopEscuelas();
                                 break;
                             case "salir":
                                 System.out.println("Saliendo");
@@ -100,6 +103,45 @@ public class ControllerAdmin implements Initializable {
         fT.setToValue(1);
         fT.play();
     }
+
+    private void abrirAprobarSolicitud() {
+        cargarSceneAlGeneral("AdminListarViajes");
+    }
+    private void abrirRegistrarSecretaria() {
+        cargarSceneAlGeneral("AdminRegistrarSecretaria");
+    }
+    private void abrirRegistrarVehiculo() {
+        cargarSceneAlGeneral("AdminRegistrarChofer");
+    }
+    private void abrirRegistrarChofer() {
+
+        cargarSceneAlGeneral("AdminRegistrarVehiculo");
+    }
+    private void abrirConsultarTopChoferes() {
+        cargarSceneAlGeneral("AdminConsultarTopChoferes");
+    }
+    private void abrirConsultarTopEscuelas() {
+        cargarSceneAlGeneral("AdminConsultarTopEscuelas");
+    }
+    private void salirDeVuelta() {
+//TODO HACER ESTO
+    }
+
+    private void cargarSceneAlGeneral(String ui){
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource(ui+".fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        panelQueCambiara.setCenter(root);
+
+    }
+
+
+
+
+
 
 
 }
