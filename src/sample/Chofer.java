@@ -17,6 +17,13 @@ public class Chofer {
         this.listaDeLicencias = listaDeLicencias;
     }
 
+    public Chofer(){
+        this.nombre = "NO HAY CHOFER ASIGNADO";
+        this.telefono = 0;
+        this.email = "NO HAY CHOFER ASIGNADO";
+        this.cedula = "NO HAY CHOFER ASIGNADO";
+    }
+
     public void aniadirLicencia(Licencia licAAniadir){
         listaDeLicencias.add(licAAniadir);
     }

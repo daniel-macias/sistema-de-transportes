@@ -37,6 +37,11 @@ public class Vehiculo {
         }
     }
 
+    public Vehiculo(){
+        this.placa = "NO HAY VEHICULO ASIGNADO";
+        this.numVin = "NO HAY VEHICULO ASIGNADO";
+    }
+
     public String getPlaca() {
         return placa;
     }

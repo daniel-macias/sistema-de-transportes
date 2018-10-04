@@ -24,7 +24,8 @@ public class Controller{
 
 
     private Admin administrador = new Admin();
-    private ArrayList<Secretaria> listaDeSecretarias = new ArrayList<>();
+    private static ArrayList<Secretaria> listaDeSecretarias = new ArrayList<>();
+
 
     @FXML
     private AnchorPane loginPane;
@@ -44,13 +45,14 @@ public class Controller{
         String passTemp = passField.getText();
 
         if (nombreUsuarioTemp.equals(administrador.getUsuario()) && passTemp.equals(administrador.getPassword())) {
-            System.out.println("ingreso CORRECTAMENTE");
+            System.out.println("ingreso CORRECTAMENTE COMO ADMIN");
             hacerFadeOut(1);
 
         } else if(listaDeSecretarias.size() > 0) {
             for (Secretaria secre : listaDeSecretarias) {
-                if (secre.getUsuario() == nombreUsuarioTemp && secre.getPassword() == passTemp) {
-                    //TODO INGRESAR COMO SECRETARIA
+                if (secre.getUsuario().equals(nombreUsuarioTemp)&& secre.getPassword().equals(passTemp)) {
+                    System.out.println("ingreso CORRECTAMENTE COMO SECRETARIA");
+                    hacerFadeOut(2);
                 }
             }
         }
@@ -87,8 +89,13 @@ public class Controller{
 
             curStage.setScene(newScene);
         }catch (IOException ex){
-            System.out.println("Error al cargar la otras esce");
+            System.out.println("Error al cargar la otras escena");
         }
 
     }
+
+    public static ArrayList<Secretaria> getListaDeSecretarias() {
+        return listaDeSecretarias;
+    }
+
 }

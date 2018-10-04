@@ -15,38 +15,34 @@ public class Viaje {
     private LocalTime horaInicio;
     private LocalTime horaFinal;
     private Chofer chofer;
+    private Vehiculo vehiculo;
     private float kilometrajeInicial;
     private float kilometrajeFinal;
     private ArrayList<Pasajero> listaDePasajeros;
     private String consecutivoDeViajes;
     private Estado estado;
+    private LocalDate tiempoQueViajeFueIngresado;
 
-    public Viaje(String puntoDeSalida, String destino, LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, Chofer chofer, float kilometrajeInicial, float kilometrajeFinal, ArrayList<Pasajero> listaDePasajeros, String consecutivoDeViajes, int estado) {
+    public Viaje(String puntoDeSalida, String destino, LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, float kilometrajeInicial, float kilometrajeFinal, ArrayList<Pasajero> listaDePasajeros) {
         this.puntoDeSalida = puntoDeSalida;
         this.destino = destino;
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
-        this.chofer = chofer;
+        this.chofer = new Chofer();
+        this.vehiculo = new Vehiculo();
         this.kilometrajeInicial = kilometrajeInicial;
         this.kilometrajeFinal = kilometrajeFinal;
         this.listaDePasajeros = listaDePasajeros;
-        this.consecutivoDeViajes = consecutivoDeViajes;
+        String numDeCeros = "";                             //Coloca la cantidad de ceros necesario para el consecutivo de viajes
+        if(numTotalDeViajes<10)
+            numDeCeros="00";
+        else if(numTotalDeViajes<100)
+            numDeCeros="0";
+        this.consecutivoDeViajes = "VIA-" +numDeCeros+numTotalDeViajes;
+        this.estado = Estado.EN_CONFECCION;
+        this.tiempoQueViajeFueIngresado = LocalDate.now();
 
-        switch (estado){
-            case 1:
-                this.estado = Estado.EN_CONFECCION;
-                break;
-            case 2:
-                this.estado = Estado.APROVADO;
-                break;
-            case 3:
-                this.estado = Estado.CANCELADO;
-                break;
-            case 4:
-                this.estado = Estado.NO_APROVADO;
-                break;
-        }
     }
 
     public static int getNumTotalDeViajes() {
@@ -105,5 +101,26 @@ public class Viaje {
                 return 4;
         }
         return 0;
+    }
+
+    public void setEstado(int estado) {
+        switch (estado){
+            case 1:
+                this.estado = Estado.EN_CONFECCION;
+                break;
+            case 2:
+                this.estado = Estado.APROVADO;
+                break;
+            case 3:
+                this.estado = Estado.CANCELADO;
+                break;
+            case 4:
+                this.estado = Estado.NO_APROVADO;
+                break;
+        }
+    }
+
+    public LocalDate getTiempoQueViajeFueIngresado() {
+        return tiempoQueViajeFueIngresado;
     }
 }

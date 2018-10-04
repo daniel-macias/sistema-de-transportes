@@ -6,29 +6,45 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fill="#616161" layoutX="300.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listar viajes">
+      <Text fill="#616161" layoutX="300.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listar viajes">
          <font>
             <Font name="Roboto Light" size="24.0" />
          </font>
       </Text>
-      <JFXListView layoutX="48.0" layoutY="95.0" prefHeight="366.0" prefWidth="492.0" />
-      <JFXButton buttonType="RAISED" layoutX="563.0" layoutY="95.0" prefHeight="25.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Aprobar" textFill="WHITE">
+      <JFXListView fx:id="listaDeViajes" layoutX="28.0" layoutY="81.0" prefHeight="398.0" prefWidth="479.0" />
+      <JFXButton buttonType="RAISED" layoutX="518.0" layoutY="391.0" prefHeight="25.0" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Aprobar" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="563.0" layoutY="134.0" prefHeight="25.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Denegar" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="518.0" layoutY="422.0" prefHeight="25.0" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Denegar" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="563.0" layoutY="172.0" prefHeight="25.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Cancelar" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="518.0" layoutY="454.0" prefHeight="25.0" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </JFXButton>
+      <JFXListView fx:id="listaDeVehiculos" layoutX="518.0" layoutY="109.0" prefHeight="126.0" prefWidth="195.0" />
+      <JFXListView fx:id="listaDeChoferes" layoutX="518.0" layoutY="259.0" prefHeight="126.0" prefWidth="195.0" />
+      <Text fill="#6f6f6f" layoutX="28.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elija un viaje:">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="518.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elija un chofer:">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="518.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elija un vehículo:">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

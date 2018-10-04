@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContSecreRegPasajero">
+   <children>
+      <Text fill="#616161" layoutX="231.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar nuevo pasajero">
+         <font>
+            <Font name="Roboto Light" size="24.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="nombre" layoutX="256.0" layoutY="150.0" prefHeight="25.0" prefWidth="211.0" promptText="nombre">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="cedula" layoutX="255.0" layoutY="184.0" prefHeight="25.0" prefWidth="211.0" promptText="cédula">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="direccion" layoutX="255.0" layoutY="219.0" prefHeight="25.0" prefWidth="211.0" promptText="dirección">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="email" layoutX="256.0" layoutY="254.0" prefHeight="25.0" prefWidth="211.0" promptText="email">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="telefono" layoutX="255.0" layoutY="288.0" prefHeight="25.0" prefWidth="211.0" promptText="teléfono">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="registrar" buttonType="RAISED" layoutX="256.0" layoutY="351.0" onAction="#registrarPasajero" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>
