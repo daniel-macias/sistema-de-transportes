@@ -15,8 +15,7 @@ public class ServicioDeMantenimiento {
     private TipoDeServicio tipoDeServicio;
     private EmprezaDeMantenimiento emprezaRealizadora;
 
-    public ServicioDeMantenimiento(String idDeServicio, LocalDate fechaDeInicio, LocalDate fechaDeFinalizacion, float montoPagado, String detalleDeActividad, int tipoDeServicio, EmprezaDeMantenimiento emprezaRealizadora) {
-        this.idDeServicio = idDeServicio;
+    public ServicioDeMantenimiento( LocalDate fechaDeInicio, LocalDate fechaDeFinalizacion, float montoPagado, String detalleDeActividad, int tipoDeServicio, EmprezaDeMantenimiento emprezaRealizadora) {
         this.fechaDeInicio = fechaDeInicio;
         this.fechaDeFinalizacion = fechaDeFinalizacion;
         this.montoPagado = montoPagado;
@@ -31,6 +30,13 @@ public class ServicioDeMantenimiento {
                 this.tipoDeServicio = TipoDeServicio.CORRECTIVO;
                 break;
         }
+
+        String numDeCeros = "";                             //Coloca la cantidad de ceros necesario para el consecutivo de viajes
+        if(numDeServiciosDeMantemiento<10)
+            numDeCeros="00";
+        else if(numDeServiciosDeMantemiento<100)
+            numDeCeros="0";
+        this.idDeServicio = "ID-SM-" + numDeCeros + numDeServiciosDeMantemiento;
     }
 
     public static int getNumDeServiciosDeMantemiento() {

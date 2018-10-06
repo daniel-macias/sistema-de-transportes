@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminMantenimiento">
+   <children>
+      <Text fill="#616161" layoutX="215.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Servicios de mantenimiento">
+         <font>
+            <Font name="Roboto Light" size="24.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="empRazon" layoutX="128.0" layoutY="98.0" prefHeight="25.0" prefWidth="211.0" promptText="razón social">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="empTelefono" layoutX="127.0" layoutY="132.0" prefHeight="25.0" prefWidth="211.0" promptText="telefono">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="empDireccion" layoutX="127.0" layoutY="167.0" prefHeight="25.0" prefWidth="211.0" promptText="dirección">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="empCedula" layoutX="128.0" layoutY="202.0" prefHeight="25.0" prefWidth="211.0" promptText="cédula">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="fieldMonto" layoutX="416.0" layoutY="98.0" prefHeight="25.0" prefWidth="211.0" promptText="monto pagado">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="fieldTipoDeServicio" layoutX="416.0" layoutY="132.0" prefHeight="25.0" prefWidth="211.0" promptText="tipo de servicio">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnRegistrarEmpreza" buttonType="RAISED" layoutX="128.0" layoutY="242.0" onAction="#registrarEmpreza" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Registrar Empreza" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXDatePicker fx:id="fieldFechaInicio" defaultColor="#485352" layoutX="415.0" layoutY="166.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de inico" />
+      <JFXDatePicker fx:id="fieldFechaFinal" defaultColor="#485352" layoutX="415.0" layoutY="201.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de finalización" />
+      <Text fill="#6f6f6f" layoutX="126.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creación de empreza de mantenimiento">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#6f6f6f" layoutX="463.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hacer mantenimiento">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnMandarAMantenimiento" buttonType="RAISED" layoutX="416.0" layoutY="464.0" onAction="#mandarAMantenimiento" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Mandar a manteniento" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tablaVehiculos" layoutX="416.0" layoutY="278.0" prefHeight="146.0" prefWidth="211.0">
+         <columns>
+            <TableColumn fx:id="colVehPlaca" prefWidth="102.4000244140625" text="Placa" />
+            <TableColumn fx:id="colVehEstado" prefWidth="107.99998474121094" text="Estado" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="fieldPlaca" layoutX="415.0" layoutY="428.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar número de placa">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="fieldDetalle" layoutX="416.0" layoutY="243.0" prefHeight="25.0" prefWidth="211.0" promptText="detalle de actividad">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tablaEmprezas" layoutX="126.0" layoutY="278.0" prefHeight="134.0" prefWidth="213.0">
+        <columns>
+          <TableColumn fx:id="colEmpCedula" prefWidth="111.19995880126953" text="Cédula" />
+          <TableColumn fx:id="colEmpTelefono" prefWidth="102.4000244140625" text="Teléfono" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="fieldCedulaEmpreza" layoutX="127.0" layoutY="428.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar cédula de empreza">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</Pane>
