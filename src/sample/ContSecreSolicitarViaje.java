@@ -104,6 +104,7 @@ public class ContSecreSolicitarViaje implements Initializable  {
                 }
 
                 Main.getListaDeViajes().add(viajeTemp);
+                Viaje.numTotalDeViajes++;
 
                 System.out.println("Viaje aniadido");
             }else {

@@ -137,4 +137,13 @@ public class Viaje {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+
+    public void setChofer(Chofer chofer) {
+        this.chofer = chofer;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
 }

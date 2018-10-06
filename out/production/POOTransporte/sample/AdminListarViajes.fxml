@@ -63,14 +63,10 @@
       <TableView fx:id="tablaViajes" layoutX="29.0" layoutY="87.0" prefHeight="322.0" prefWidth="468.0">
         <columns>
           <TableColumn fx:id="viaId" prefWidth="52.79998779296875" text="ID" />
-          <TableColumn fx:id="viaPuntInicio" prefWidth="43.199981689453125" text="Inicio" />
-            <TableColumn fx:id="viaPuntDestino" prefWidth="48.800048828125" text="Destino" />
-            <TableColumn fx:id="viaFecha" prefWidth="41.5999755859375" text="Fecha" />
-            <TableColumn fx:id="viaHoraInicio" prefWidth="71.20001220703125" text="Hora Inicio" />
-            <TableColumn fx:id="viaHoraFinal" prefWidth="64.0" text="Hora Final" />
-            <TableColumn fx:id="viaChofer" prefWidth="49.5999755859375" text="Chofer" />
-            <TableColumn fx:id="viaVehiculo" prefWidth="55.20001220703125" text="Vehiculo" />
-            <TableColumn fx:id="viaEstado" prefWidth="38.4000244140625" text="Estado" />
+            <TableColumn fx:id="viaPuntDestino" prefWidth="109.60000610351562" text="Destino" />
+            <TableColumn fx:id="viaFechaIngreso" prefWidth="102.39996337890625" text="Fecha de Ingreso" />
+            <TableColumn fx:id="viaEstado" prefWidth="99.20001220703125" text="Estado" />
+            <TableColumn fx:id="viaEscuela" prefWidth="104.0" text="Escuela" />
         </columns>
       </TableView>
       <TableView fx:id="tablaChofer" layoutX="518.0" layoutY="101.0" prefHeight="131.0" prefWidth="195.0">

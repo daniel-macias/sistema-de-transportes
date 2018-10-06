@@ -61,5 +61,10 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
+      <JFXTextField fx:id="departamento" layoutX="74.0" layoutY="347.0" prefHeight="25.0" prefWidth="211.0" promptText="departamento ">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
    </children>
 </Pane>
