@@ -22,6 +22,7 @@ public class Viaje {
     private String consecutivoDeViajes;
     private Estado estado;
     private LocalDate tiempoQueViajeFueIngresado;
+    private String departamento;
 
     public Viaje(String puntoDeSalida, String destino, LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, float kilometrajeInicial, float kilometrajeFinal, ArrayList<Pasajero> listaDePasajeros) {
         this.puntoDeSalida = puntoDeSalida;
@@ -42,6 +43,7 @@ public class Viaje {
         this.consecutivoDeViajes = "VIA-" +numDeCeros+numTotalDeViajes;
         this.estado = Estado.EN_CONFECCION;
         this.tiempoQueViajeFueIngresado = LocalDate.now();
+        this.departamento = "sin departamento";
 
     }
 
@@ -122,5 +124,17 @@ public class Viaje {
 
     public LocalDate getTiempoQueViajeFueIngresado() {
         return tiempoQueViajeFueIngresado;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
     }
 }

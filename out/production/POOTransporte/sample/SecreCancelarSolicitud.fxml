@@ -27,13 +27,16 @@
       </Text>
       <TableView fx:id="tabladeViajes" layoutX="28.0" layoutY="86.0" prefHeight="349.0" prefWidth="668.0">
         <columns>
-          <TableColumn fx:id="viaID" prefWidth="59.99996757507324" text="ID" />
-          <TableColumn fx:id="viaPuntoDeSalida" prefWidth="120.79993438720703" text="Punto de Salida" />
-            <TableColumn fx:id="viaDestino" prefWidth="124.800048828125" text="Destino" />
-            <TableColumn fx:id="viaFecha" minWidth="0.0" prefWidth="106.4000244140625" text="Fecha" />
-            <TableColumn fx:id="viaHoraInicio" minWidth="0.0" prefWidth="79.19998168945312" text="Hora Inicio" />
-            <TableColumn fx:id="viaHoraFinal" prefWidth="70.39996337890625" text="Hora Final" />
-            <TableColumn fx:id="viaEstado" prefWidth="107.20001220703125" text="Estado" />
+          <TableColumn fx:id="viaID" prefWidth="81.60000419616699" text="ID" />
+          <TableColumn fx:id="viaPuntoDeSalida" minWidth="0.0" prefWidth="77.60004425048828" text="Punto Salida" />
+            <TableColumn fx:id="viaDestino" prefWidth="69.5999755859375" text="Destino" />
+            <TableColumn fx:id="viaFecha" minWidth="0.0" prefWidth="61.60009765625" text="Fecha" />
+            <TableColumn fx:id="viaHoraInicio" minWidth="0.0" prefWidth="56.800048828125" text="Hr. Inicio" />
+            <TableColumn fx:id="viaHoraFinal" prefWidth="54.39996337890625" text="Hr. Final" />
+            <TableColumn fx:id="viaEstado" prefWidth="42.4000244140625" text="Estado" />
+            <TableColumn fx:id="viaKmInicial" prefWidth="60.800018310546875" text="Km Inicial" />
+            <TableColumn fx:id="viaKmFinal" prefWidth="54.39996337890625" text="Km Final" />
+            <TableColumn fx:id="viaTiempoIngresado" prefWidth="110.39990234375" text="Tiempo Ingresado" />
         </columns>
       </TableView>
       <JFXTextField fx:id="idDeViajeACancelar" layoutX="290.0" layoutY="454.0" prefHeight="25.0" prefWidth="204.0" promptText="ingrese el ID del viaje">

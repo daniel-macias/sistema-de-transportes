@@ -2,57 +2,57 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminRegChofer">
    <children>
       <Text fill="#616161" layoutX="243.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar nuevo chofer">
          <font>
             <Font name="Roboto Light" size="24.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="128.0" layoutY="109.0" prefHeight="25.0" prefWidth="211.0" promptText="nombre">
+      <JFXTextField fx:id="nombreC" layoutX="128.0" layoutY="109.0" prefHeight="25.0" prefWidth="211.0" promptText="nombre">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="127.0" layoutY="143.0" prefHeight="25.0" prefWidth="211.0" promptText="telefono">
+      <JFXTextField fx:id="telefonoC" layoutX="127.0" layoutY="143.0" prefHeight="25.0" prefWidth="211.0" promptText="telefono">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="127.0" layoutY="178.0" prefHeight="25.0" prefWidth="211.0" promptText="email">
+      <JFXTextField fx:id="emailC" layoutX="127.0" layoutY="178.0" prefHeight="25.0" prefWidth="211.0" promptText="email">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="128.0" layoutY="213.0" prefHeight="25.0" prefWidth="211.0" promptText="cedula">
+      <JFXTextField fx:id="cedulaC" layoutX="128.0" layoutY="213.0" prefHeight="25.0" prefWidth="211.0" promptText="cedula">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="417.0" layoutY="109.0" prefHeight="25.0" prefWidth="211.0" promptText="número">
+      <JFXTextField fx:id="numeroL" layoutX="417.0" layoutY="109.0" prefHeight="25.0" prefWidth="211.0" promptText="número">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="417.0" layoutY="143.0" prefHeight="25.0" prefWidth="211.0" promptText="tipo">
+      <JFXTextField fx:id="tipoL" layoutX="417.0" layoutY="143.0" prefHeight="25.0" prefWidth="211.0" promptText="tipo">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXButton buttonType="RAISED" layoutX="127.0" layoutY="412.0" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Registrar Chofer" textFill="WHITE">
+      <JFXButton fx:id="btnRegistrarChofer" buttonType="RAISED" layoutX="416.0" layoutY="451.0" onAction="#registrarChofer" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Registrar Chofer" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </JFXButton>
-      <JFXDatePicker defaultColor="#485352" layoutX="416.0" layoutY="177.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de emisión" />
-      <JFXDatePicker defaultColor="#485352" layoutX="416.0" layoutY="212.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de expiración" />
-      <JFXListView layoutX="127.0" layoutY="265.0" prefHeight="120.0" prefWidth="211.0" />
+      <JFXDatePicker fx:id="fechaDeEmisionL" defaultColor="#485352" layoutX="416.0" layoutY="177.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de emisión" />
+      <JFXDatePicker fx:id="fechaDeExpiracionL" defaultColor="#485352" layoutX="416.0" layoutY="212.0" prefHeight="28.0" prefWidth="211.0" promptText="fecha de expiración" />
       <Text fill="#6f6f6f" layoutX="159.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese los datos del chofer">
          <font>
             <Font name="Roboto" size="12.0" />
@@ -63,7 +63,23 @@
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <JFXButton buttonType="RAISED" layoutX="416.0" layoutY="265.0" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Crear licencia" textFill="WHITE">
+      <JFXButton fx:id="btnCrearLicencia" buttonType="RAISED" layoutX="416.0" layoutY="265.0" onAction="#crearLicencia" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Crear licencia" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tablaLicencias" layoutX="127.0" layoutY="254.0" prefHeight="146.0" prefWidth="211.0">
+        <columns>
+          <TableColumn fx:id="colNumero" prefWidth="102.4000244140625" text="Número" />
+          <TableColumn fx:id="colExpiracion" prefWidth="107.99998474121094" text="Expiración" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="ingresadorDeCedula" layoutX="127.0" layoutY="410.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar número de licencia">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAgregarLicencia" buttonType="RAISED" layoutX="127.0" layoutY="439.0" onAction="#agregarLicencia" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Añadir Licencia" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>

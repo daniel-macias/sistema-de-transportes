@@ -59,6 +59,9 @@ public class ContSecreSolicitarViaje implements Initializable  {
     @FXML
     private JFXTextField carneDePasajero;
 
+    @FXML
+    private JFXTextField departamento;
+
 
     @FXML
     void aniadirPasajeroApretado(ActionEvent event) {           //Añade el pasajero que desea ser metido al viaje
@@ -72,6 +75,7 @@ public class ContSecreSolicitarViaje implements Initializable  {
             for(Pasajero p : Main.getListaDePasajeros()){
                 if(p.getCedula().equals(carneDePasajero.getText())){
                     tempListaDePasajerosEnViaje.add(p);
+                    System.out.println("Pasajero aniadido al viaje");
                 }
             }
         }else {
@@ -82,11 +86,26 @@ public class ContSecreSolicitarViaje implements Initializable  {
     @FXML
     void solicitarViajeApretado(ActionEvent event) { //La accion de solicitar el viaje en si
         try{ //Es para saber si es un float los valores de los kilomemtros
+
+            //Esto seria para evitar el bug de pasar por referencia
+            ArrayList<Pasajero> realAAgregar = new ArrayList<>();  //El new es el que arregla el error
+            for(Pasajero p: tempListaDePasajerosEnViaje)
+                realAAgregar.add(p);
+
             if(puntoDeSalida.getText()!=null && destino.getText()!=null && kmFinal.getText()!=null
-                    && kmInicial.getText()!=null && fecha.getValue()!=null && horaDeInicio.getValue()!=null && horaFinal.getValue()!=null){ //Verifica si esta lleno
+                    && kmInicial.getText()!=null && fecha.getValue()!=null && horaDeInicio.getValue()!=null && horaFinal.getValue()!=null &&tempListaDePasajerosEnViaje.size() > 0){ //Verifica si esta lleno
                 Viaje viajeTemp = new Viaje(puntoDeSalida.getText(),destino.getText(),fecha.getValue(),horaDeInicio.getValue(),horaFinal.getValue(),
-                        Float.valueOf(kmInicial.getText()),Float.valueOf(kmFinal.getText()),tempListaDePasajerosEnViaje);
+                        Float.valueOf(kmInicial.getText()),Float.valueOf(kmFinal.getText()),realAAgregar);
+
+                if(departamento.getText()!=null){
+                    viajeTemp.setDepartamento(departamento.getText());
+                }else {
+                    System.out.println("ADVERTENCIA: un departamento no fue especificado");
+                }
+
                 Main.getListaDeViajes().add(viajeTemp);
+
+                System.out.println("Viaje aniadido");
             }else {
                 System.out.println("ERROR: Se deben llenar todos los valores");
             }

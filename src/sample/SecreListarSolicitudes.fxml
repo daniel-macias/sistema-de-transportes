@@ -17,13 +17,13 @@
             <Font name="Roboto Light" size="24.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="138.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="destino del viaje">
+      <JFXTextField fx:id="buscadorDestino" layoutX="138.0" layoutY="99.0" prefHeight="25.0" prefWidth="165.0" promptText="destino del viaje">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXDatePicker layoutX="137.0" layoutY="140.0" prefHeight="28.0" prefWidth="165.0" promptText="fecha" />
-      <JFXComboBox layoutX="137.0" layoutY="184.0" prefHeight="25.0" prefWidth="165.0" promptText="estado" />
+      <JFXDatePicker fx:id="buscadorFecha" layoutX="137.0" layoutY="140.0" prefHeight="28.0" prefWidth="165.0" promptText="fecha" />
+      <JFXComboBox fx:id="buscadorEstado" layoutX="137.0" layoutY="184.0" prefHeight="25.0" prefWidth="165.0" promptText="estado" />
       <JFXButton fx:id="btnSearchDestino" buttonType="RAISED" layoutX="33.0" layoutY="99.0" onAction="#buscarPorDestino" prefHeight="25.0" prefWidth="81.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Buscar" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
@@ -44,27 +44,27 @@
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="32.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Pasajeros:">
+      <Text fill="#6f6f6f" layoutX="31.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Pasajeros:">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="33.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chofer:">
+      <Text fill="#6f6f6f" layoutX="33.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chofer:">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="33.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehículo:">
+      <Text fill="#6f6f6f" layoutX="33.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehículo:">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="114.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="no hay viaje seleccionado">
+      <Text fx:id="choferSelec" fill="#6f6f6f" layoutX="114.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="no hay viaje seleccionado">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <Text fill="#6f6f6f" layoutX="114.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="no hay viaje seleccionado">
+      <Text fx:id="vehiculoSelec" fill="#6f6f6f" layoutX="114.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="no hay viaje seleccionado">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
@@ -78,11 +78,21 @@
             <TableColumn fx:id="viaInicioViaje" prefWidth="77.4000244140625" text="Inicio Viaje" />
         </columns>
       </TableView>
-      <TableView fx:id="tablaPasajeros" layoutX="30.0" layoutY="254.0" prefHeight="172.0" prefWidth="289.0">
+      <TableView fx:id="tablaPasajeros" layoutX="31.0" layoutY="235.0" prefHeight="138.0" prefWidth="289.0">
          <columns>
             <TableColumn fx:id="nombrePasajero" prefWidth="136.0000057220459" text="Nombre" />
             <TableColumn fx:id="nombreCarne" prefWidth="152.79998779296875" text="Carné" />
          </columns>
       </TableView>
+      <JFXTextField fx:id="viajeEspecifico" layoutX="33.0" layoutY="435.0" prefHeight="25.0" prefWidth="166.0" promptText="ingrese ID de viaje">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnMostrarInfo" buttonType="RAISED" layoutX="209.0" layoutY="435.0" onAction="#mostrarInfoEspecifica" prefHeight="25.0" prefWidth="101.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Mostrar Info" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </Pane>

@@ -5,8 +5,8 @@ public class Admin {
     private String usuario;
 
     Admin(){
-        password = "admin";
-        usuario = "admin";
+        password = "123Admin!";
+        usuario = "administrador";
     }
 
     public String getPassword() {
