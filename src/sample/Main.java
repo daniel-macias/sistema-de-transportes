@@ -26,6 +26,7 @@ public class Main extends Application {
         loadListaDeChoferes();
         loadListaDeViajes();
         loadListaDeVehiculos();
+        Viaje.numTotalDeViajes = listaDeViajes.size()-1;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Sistema de Transporte");
         primaryStage.setScene(new Scene(root, 724, 508));
