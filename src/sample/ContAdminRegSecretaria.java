@@ -6,6 +6,8 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import java.io.IOException;
+
 public class ContAdminRegSecretaria {
 
     @FXML
@@ -18,7 +20,7 @@ public class ContAdminRegSecretaria {
     private JFXPasswordField pass;
 
     @FXML
-    void registrarSecretaria(ActionEvent event) {
+    void registrarSecretaria(ActionEvent event) throws IOException {
         Secretaria secre = new Secretaria(pass.getText(),user.getText());
         boolean yaExiste = false;
         for(Secretaria s : Controller.getListaDeSecretarias()){
@@ -27,6 +29,7 @@ public class ContAdminRegSecretaria {
         }
         if(!yaExiste) {
             Controller.getListaDeSecretarias().add(secre);
+            Controller.guardarListaDeSecretarias();
             System.out.println("USUARIO: " + secre.getUsuario() + "REGISTRADO");
         }
         else

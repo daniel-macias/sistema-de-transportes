@@ -65,6 +65,7 @@ public class ContAdminRegVehiculo implements Initializable {
                         tempEstado = 3;
                     Vehiculo tempVehiculo = new Vehiculo(placa.getText(),Integer.parseInt(anioDeFabricacion.getText()), color.getText(), marca.getText(), Integer.parseInt(capacidad.getText()), Float.parseFloat(kilometraje.getText()), numeroVin.getText(),sedeDePertenencia.getText(), tempEstado);
                     Main.getListaDeVehiculos().add(tempVehiculo);
+                    Main.guardarListaDeVehiculos();
                 }catch (Exception e){
                     System.out.println("ERROR: numero ingresado no es valido");
                 }

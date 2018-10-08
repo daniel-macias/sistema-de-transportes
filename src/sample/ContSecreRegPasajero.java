@@ -38,6 +38,7 @@ public class ContSecreRegPasajero {
                     int tempNum = Integer.parseInt(telefono.getText());
                     Pasajero pa = new Pasajero(nombre.getText(), cedula.getText(), direccion.getText(), email.getText(), tempNum);
                     Main.getListaDePasajeros().add(pa);
+                    Main.guardarListaDePasajeros();
                     System.out.println("Pasajero añadido: " + pa.getCedula());
                 }else{
                     System.out.println("ERROR: Pasajero ya existía");

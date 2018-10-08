@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -75,7 +76,7 @@ public class ContAdminListarViajes implements Initializable {
     private TableColumn<Vehiculo, String> vehCapacidad;
 
     @FXML
-    void aprobarViaje(ActionEvent event) {
+    void aprobarViaje(ActionEvent event) throws IOException {
         Vehiculo vehiculoAMeter = new Vehiculo();
         Chofer choferAMeter = new Chofer();
         int condicionesAceptadas = 0; //esto es usado para saber si se llenaron los valores para hacer un viaje
@@ -111,6 +112,7 @@ public class ContAdminListarViajes implements Initializable {
                 viajeAModificar.setEstado(2); //Cambiando el estado del viaje
                 viajeAModificar.setChofer(choferAMeter);
                 viajeAModificar.setVehiculo(vehiculoAMeter);
+                Main.guardarListaDeViajes();
                 tablaViajes.getItems().clear(); //Esto refresca el table view
                 tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
                 System.out.println("Viaje aceptado!");
@@ -121,7 +123,7 @@ public class ContAdminListarViajes implements Initializable {
     }
 
     @FXML
-    void cancelarViaje(ActionEvent event) {
+    void cancelarViaje(ActionEvent event) throws IOException {
         //Primero se busca la existencia de este viaje
         Viaje viajeAModificar = null;
         for(Viaje v: Main.getListaDeViajes()){
@@ -130,6 +132,7 @@ public class ContAdminListarViajes implements Initializable {
         }
         if(viajeAModificar!=null){
             viajeAModificar.setEstado(3); //Cambiando el estado del viaje
+            Main.guardarListaDeViajes();
             tablaViajes.getItems().clear(); //Esto refresca el table view
             tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
             System.out.println("Viaje cancelado!");
@@ -139,7 +142,7 @@ public class ContAdminListarViajes implements Initializable {
     }
 
     @FXML
-    void denegarViaje(ActionEvent event) {
+    void denegarViaje(ActionEvent event) throws IOException {
         //Primero se busca la existencia de este viaje
         Viaje viajeAModificar = null;
         for(Viaje v: Main.getListaDeViajes()){
@@ -148,6 +151,7 @@ public class ContAdminListarViajes implements Initializable {
         }
         if(viajeAModificar!=null){
             viajeAModificar.setEstado(4); //Cambiando el estado del viaje
+            Main.guardarListaDeViajes();
             tablaViajes.getItems().clear(); //Esto refresca el table view
             tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
             System.out.println("Viaje denegado!");

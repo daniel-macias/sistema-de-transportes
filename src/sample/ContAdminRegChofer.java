@@ -116,6 +116,7 @@ public class ContAdminRegChofer implements Initializable {
                 if (!yaExisteChofer) {
                     Chofer tempChofer = new Chofer(nombreC.getText(), Integer.parseInt(telefonoC.getText()), emailC.getText(),cedulaC.getText(),licenciasDelChoferAAgregar);
                     Main.getListaDeChoferes().add(tempChofer);
+                    Main.guardarListaDeChoferes();
                     System.out.println("Chofer añadido");
                 }else {
                     System.out.println("ERROR: ese chofer ya fue agregado");

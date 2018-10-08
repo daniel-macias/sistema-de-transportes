@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -58,12 +59,13 @@ public class ContSecreCancelarSolicitud implements Initializable {
     private JFXTextField idDeViajeACancelar;
 
     @FXML
-    void cancelarViaje(ActionEvent event) {
+    void cancelarViaje(ActionEvent event) throws IOException {
         if(idDeViajeACancelar.getText()!=null){
             for(Viaje v : Main.getListaDeViajes()){
                 if(v.getConsecutivoDeViajes().equals(idDeViajeACancelar.getText()))
                     v.setEstado(3);
             }
+            Main.guardarListaDeViajes();
             tabladeViajes.getItems().clear(); //Esto refresca el table view
             tabladeViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
 

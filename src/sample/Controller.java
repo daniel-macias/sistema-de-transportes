@@ -1,4 +1,7 @@
 package sample;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -15,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -40,9 +43,10 @@ public class Controller{
     private JFXButton ingresar;
 
     @FXML
-    void intentarIngresar(ActionEvent event) {
+    void intentarIngresar(ActionEvent event) throws FileNotFoundException {
         String nombreUsuarioTemp = usuarioField.getText();
         String passTemp = passField.getText();
+        loadListaDeSecretarias();
 
         if (nombreUsuarioTemp.equals(administrador.getUsuario()) && passTemp.equals(administrador.getPassword())) {
             System.out.println("ingreso CORRECTAMENTE COMO ADMIN");
@@ -98,4 +102,16 @@ public class Controller{
         return listaDeSecretarias;
     }
 
+    public static void loadListaDeSecretarias() throws FileNotFoundException {
+
+        JsonReader reader = new JsonReader(new FileReader(System.getProperty("user.dir") + "/DB/usuariosDB.json"));
+        listaDeSecretarias = new Gson().fromJson(reader, new TypeToken<ArrayList<Secretaria>>(){}.getType());
+    }
+
+    public static void guardarListaDeSecretarias() throws IOException {
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir") + "/DB/usuariosDB.json"));
+        writer.write(new Gson().toJson(listaDeSecretarias));
+        writer.close();
+    }
 }
