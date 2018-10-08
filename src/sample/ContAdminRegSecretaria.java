@@ -19,6 +19,9 @@ public class ContAdminRegSecretaria {
     @FXML
     private JFXTextField correo;
 
+    private String subject;
+    private String body;
+
     @FXML
     void registrarSecretaria(ActionEvent event) throws IOException {
         Secretaria secre = new Secretaria(generarContrasenia(),user.getText(), correo.getText());
@@ -29,6 +32,10 @@ public class ContAdminRegSecretaria {
         }
         if(!yaExiste) {
             Controller.getListaDeSecretarias().add(secre);
+            subject = "Creación de cuenta exitosa!";
+            body = "Su cuenta ha sido creada con éxito.\nNombre de usuario: " + secre.getUsuario() + "\nContraseña: "
+                    + secre.getPassword();
+            new Mailing().sendMail(secre.getCorreo(), subject, body);
             Controller.guardarListaDeSecretarias();
             System.out.println("USUARIO: " + secre.getUsuario() + " REGISTRADO");
         }

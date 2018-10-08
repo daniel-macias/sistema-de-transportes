@@ -10,15 +10,15 @@ public class Mailing {
 
     private String from = "progratransportestec@gmail.com";
 
-    public void sendMail(String direcciones, String subject, String cuerpo){
+    public void sendMail(String direccion, String subject, String cuerpo){
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp,port", 587);
+        properties.put("mail.smtp.port", 587);
 
-        Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator(){
             protected PasswordAuthentication getPasswordAuthentication(){
                 return new PasswordAuthentication("progratransportestec@gmail.com", "progratransportes");
             }
@@ -26,7 +26,7 @@ public class Mailing {
         try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(direcciones));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(direccion));
             message.setSubject(subject);
             message.setText(cuerpo);
             Transport.send(message);
@@ -35,6 +35,6 @@ public class Mailing {
             e.printStackTrace();
         } catch (MessagingException e) {
             e.printStackTrace();
-        } ;
+        }
     }
 }
