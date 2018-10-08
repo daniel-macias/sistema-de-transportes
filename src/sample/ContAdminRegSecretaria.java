@@ -1,12 +1,12 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ContAdminRegSecretaria {
 
@@ -17,11 +17,11 @@ public class ContAdminRegSecretaria {
     private JFXButton registrar;
 
     @FXML
-    private JFXPasswordField pass;
+    private JFXTextField correo;
 
     @FXML
     void registrarSecretaria(ActionEvent event) throws IOException {
-        Secretaria secre = new Secretaria(pass.getText(),user.getText());
+        Secretaria secre = new Secretaria(generarContrasenia(),user.getText(), correo.getText());
         boolean yaExiste = false;
         for(Secretaria s : Controller.getListaDeSecretarias()){
             if(s.getUsuario().equals(user.getText()) || s.getUsuario().equals("admin"))
@@ -30,10 +30,17 @@ public class ContAdminRegSecretaria {
         if(!yaExiste) {
             Controller.getListaDeSecretarias().add(secre);
             Controller.guardarListaDeSecretarias();
-            System.out.println("USUARIO: " + secre.getUsuario() + "REGISTRADO");
+            System.out.println("USUARIO: " + secre.getUsuario() + " REGISTRADO");
         }
         else
             System.out.println("ERROR: ESE USUARIO YA EXISTE");
     }
 
+    private String generarContrasenia(){
+
+        String password = new RandomString(ThreadLocalRandom.current().nextInt(8, 12), ThreadLocalRandom.current()
+                , "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890").nextString();
+        password += new RandomString(1, ThreadLocalRandom.current(), "!#$?@^~").nextString();
+        return password;
+    }
 }
