@@ -115,7 +115,16 @@ public class ContAdminListarViajes implements Initializable {
                 Main.guardarListaDeViajes();
                 tablaViajes.getItems().clear(); //Esto refresca el table view
                 tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
-                System.out.println("Viaje aceptado!");
+                String direcciones = "";
+                for (Pasajero p : viajeAModificar.getListaDePasajeros()){
+                    direcciones += p.getEmail();
+                    direcciones += ",";
+                }
+                direcciones += viajeAModificar.getChofer().getEmail();
+                new Mailing().sendMail(direcciones, "Viaje aprobado", "El viaje con sentido " + viajeAModificar.getPuntoDeSalida()
+                        + " - " + viajeAModificar.getDestino() + " que sale a las " + viajeAModificar.getHoraInicio() + " el dia "
+                        + viajeAModificar.getFecha() + " ha sido aprobado.");
+                System.out.println("Viaje aprobado!");
             }else {
                 System.out.println("ERROR: Ese viaje no existe");
             }
@@ -135,6 +144,15 @@ public class ContAdminListarViajes implements Initializable {
             Main.guardarListaDeViajes();
             tablaViajes.getItems().clear(); //Esto refresca el table view
             tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
+            String direcciones = "";
+            for (Pasajero p : viajeAModificar.getListaDePasajeros()){
+                direcciones += p.getEmail();
+                direcciones += ",";
+            }
+            direcciones += viajeAModificar.getChofer().getEmail();
+            new Mailing().sendMail(direcciones, "Viaje cancelado", "El viaje con sentido " + viajeAModificar.getPuntoDeSalida()
+                    + " - " + viajeAModificar.getDestino() + " que sale a las " + viajeAModificar.getHoraInicio() + " el dia "
+                    + viajeAModificar.getFecha() + " ha sido cancelado.");
             System.out.println("Viaje cancelado!");
         }else {
             System.out.println("ERROR: Ese viaje no existe");
@@ -154,6 +172,15 @@ public class ContAdminListarViajes implements Initializable {
             Main.guardarListaDeViajes();
             tablaViajes.getItems().clear(); //Esto refresca el table view
             tablaViajes.setItems(agarrarLosViajes(Main.getListaDeViajes()));
+            String direcciones = "";
+            for (Pasajero p : viajeAModificar.getListaDePasajeros()){
+                direcciones += p.getEmail();
+                direcciones += ",";
+            }
+            direcciones += viajeAModificar.getChofer().getEmail();
+            new Mailing().sendMail(direcciones, "Viaje denegado", "El viaje con sentido " + viajeAModificar.getPuntoDeSalida()
+                    + " - " + viajeAModificar.getDestino() + " que sale a las " + viajeAModificar.getHoraInicio() + " el dia "
+                    + viajeAModificar.getFecha() + " ha sido denegado.");
             System.out.println("Viaje denegado!");
         }else {
             System.out.println("ERROR: Ese viaje no existe");

@@ -10,7 +10,7 @@ public class Mailing {
 
     private String from = "progratransportestec@gmail.com";
 
-    public void sendMail(String direccion, String subject, String cuerpo){
+    public void sendMail(String direcciones, String subject, String cuerpo){
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -26,7 +26,7 @@ public class Mailing {
         try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(direccion));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(direcciones));
             message.setSubject(subject);
             message.setText(cuerpo);
             Transport.send(message);
