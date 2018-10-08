@@ -63,18 +63,18 @@
             <Font name="Roboto" size="12.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnMandarAMantenimiento" buttonType="RAISED" layoutX="416.0" layoutY="464.0" onAction="#mandarAMantenimiento" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Mandar a manteniento" textFill="WHITE">
+      <JFXButton fx:id="btnMandarAMantenimiento" buttonType="RAISED" layoutX="416.0" layoutY="387.0" onAction="#mandarAMantenimiento" prefHeight="25.0" prefWidth="211.0" ripplerFill="WHITE" style="-fx-background-color: #4272c4;" text="Mandar a manteniento" textFill="WHITE">
          <font>
             <Font name="Roboto" size="12.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tablaVehiculos" layoutX="416.0" layoutY="278.0" prefHeight="146.0" prefWidth="211.0">
+      <TableView fx:id="tablaVehiculos" layoutX="416.0" layoutY="278.0" prefHeight="64.0" prefWidth="211.0">
          <columns>
             <TableColumn fx:id="colVehPlaca" prefWidth="102.4000244140625" text="Placa" />
             <TableColumn fx:id="colVehEstado" prefWidth="107.99998474121094" text="Estado" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="fieldPlaca" layoutX="415.0" layoutY="428.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar número de placa">
+      <JFXTextField fx:id="fieldPlaca" layoutX="415.0" layoutY="351.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar número de placa">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
@@ -85,15 +85,21 @@
          </font>
       </JFXTextField>
       <TableView fx:id="tablaEmprezas" layoutX="126.0" layoutY="278.0" prefHeight="134.0" prefWidth="213.0">
-        <columns>
-          <TableColumn fx:id="colEmpCedula" prefWidth="111.19995880126953" text="Cédula" />
-          <TableColumn fx:id="colEmpTelefono" prefWidth="102.4000244140625" text="Teléfono" />
-        </columns>
+         <columns>
+            <TableColumn fx:id="colEmpCedula" prefWidth="111.19995880126953" text="Cédula" />
+            <TableColumn fx:id="colEmpTelefono" prefWidth="102.4000244140625" text="Teléfono" />
+         </columns>
       </TableView>
       <JFXTextField fx:id="fieldCedulaEmpreza" layoutX="127.0" layoutY="428.0" prefHeight="25.0" prefWidth="211.0" promptText="ingresar cédula de empreza">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </JFXTextField>
+      <TableView fx:id="tablaServicios" layoutX="415.0" layoutY="428.0" prefHeight="64.0" prefWidth="211.0">
+         <columns>
+            <TableColumn fx:id="colSerId" prefWidth="75.0" text="ID Servicio" />
+            <TableColumn fx:id="colSerTipo" prefWidth="134.99996948242188" text="Tipo de Servicio" />
+         </columns>
+      </TableView>
    </children>
 </Pane>

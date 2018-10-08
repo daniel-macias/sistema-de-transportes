@@ -9,19 +9,19 @@
 
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContAdminConsultarTopChoferes">
-   <children>
-      <Text fill="#616161" layoutX="281.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top 5 Choferes">
-         <font>
-            <Font name="Roboto Light" size="24.0" />
-         </font>
-      </Text>
-      <BarChart fx:id="grafico" layoutX="89.0" layoutY="94.0" prefHeight="373.0" prefWidth="546.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </BarChart>
-   </children>
+    <children>
+        <Text fill="#616161" layoutX="281.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Top 5 Choferes">
+            <font>
+                <Font name="Roboto Light" size="24.0" />
+            </font>
+        </Text>
+        <BarChart fx:id="grafico" layoutX="89.0" layoutY="94.0" prefHeight="373.0" prefWidth="546.0">
+            <xAxis>
+                <CategoryAxis label="Choferes" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Cantidad de Viajes" side="LEFT" />
+            </yAxis>
+        </BarChart>
+    </children>
 </Pane>

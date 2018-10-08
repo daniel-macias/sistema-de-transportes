@@ -17,6 +17,8 @@ public class Main extends Application {
     private static ArrayList<Chofer> listaDeChoferes = new ArrayList<>();
     private static ArrayList<Viaje> listaDeViajes = new ArrayList<>();
     private static ArrayList<Vehiculo> listaDeVehiculos = new ArrayList<>();
+    private static ArrayList<ServicioDeMantenimiento> listaDeServiciosDeMantenimiento = new ArrayList<>();
+    private static ArrayList<EmprezaDeMantenimiento> listaDeEmprezasDeMantenimiento = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -101,5 +103,13 @@ public class Main extends Application {
         BufferedWriter writerVehiculos = new BufferedWriter(new FileWriter(System.getProperty("user.dir") + "/DB/vehiculosDB.json"));
         writerVehiculos.write(new Gson().toJson(listaDeVehiculos));
         writerVehiculos.close();
+    }
+
+    public static ArrayList<ServicioDeMantenimiento> getListaDeServiciosDeMantenimiento() {
+        return listaDeServiciosDeMantenimiento;
+    }
+
+    public static ArrayList<EmprezaDeMantenimiento> getListaDeEmprezasDeMantenimiento() {
+        return listaDeEmprezasDeMantenimiento;
     }
 }

@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/" />
+          <root url="jar://D:/libraries/activation-jaf1.1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/javax.mail-1.6.2.jar!/" />
+          <root url="jar://D:/libraries/gson-2.8.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/jaf-1.1.1/activation.jar!/" />
+          <root url="jar://D:/libraries/javax.mail.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

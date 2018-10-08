@@ -70,6 +70,9 @@ public class ControllerAdmin implements Initializable {
                             case "consultar_top_escuelas":
                                 cargarSceneAlGeneral("AdminConsultarTopEscuelas");
                                 break;
+                            case "mantenimiento":                                   //Nuevas adiciones
+                                cargarSceneAlGeneral("AdminMantenimiento");
+                                break;
                             case "salir":
                                 System.out.println("Saliendo");
                                 cargarSceneAlGeneral("sample");
